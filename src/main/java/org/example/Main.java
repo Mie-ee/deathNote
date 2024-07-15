@@ -1,37 +1,25 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
 
   public static void main(String[] args) {
-    List<String> students = new ArrayList<>();
-    students.add("Ali");
-    students.add("Bob");
-    students.add("Cha");
-    students.add("David");
-    students.add("Eve");
-    students.add("Frank");
-    students.add("Iva");
-    students.add("John");
-    students.add("Kat");
-    students.add("Liam");
-    students.add("Mia");
-    students.add("Nathan");
-    students.add("Peter");
-    students.add("Rachel");
 
-    int st = students.size();
-    int ast = 0;
-    System.out.println(students);
-    System.out.println("4月の時生徒の数は" + st + "人でした。");
-    for (String student : students) {
-      if (student.length() > 3) {
-        System.out.println(student);
-        ast++;
-      }
-    }
-    System.out.println("５月の時生徒の数は" + ast + "人になった。");
+    //4月の時の新入生生徒のリスト
+    List<String> freshemen = List.of("Ali", "Bob", "Charlie", "David", "Eve", "Frank", "Grace",
+        "Han", "Iva", "John", "Kate", "Liam", "Mia", "Amy", "Elizabeth", "SOS");
+    System.out.println(freshemen);
+    System.out.println(+freshemen.size() + "人の新入生がいます。");
+
+    //名前3文字以下の生徒の名前をDeathNoteに書く
+    List<String> aliveStudents = freshemen.stream()
+        .filter(name -> name.length() > 3)
+        .toList();
+
+    //まだ生きている生徒たちのリスト
+    System.out.println(aliveStudents);
+    System.out.println(+aliveStudents.size() + "人の生徒が生き残りました。");
+
   }
 }
