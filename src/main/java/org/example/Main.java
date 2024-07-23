@@ -1,6 +1,8 @@
 package org.example;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -23,5 +25,21 @@ public class Main {
     System.out.println(alive);
     System.out.println(alive.size() + "人が生き残りました");
 
+    //生徒にIDを付ける
+    Map<Integer, String> studentMap = new HashMap<>();
+    for (int i = 0; i < alive.size(); i++) {
+      studentMap.put(i + 1, alive.get(i));
+    }
+    System.out.println(studentMap);
+
+    //IDが偶数の生徒をDeathNoteに書く
+    for (int i = 1; i <= studentMap.size(); i++) {
+      if (i % 2 == 0) {
+        studentMap.remove(i);
+      }
+    }
+
+    //6月の生徒リスト
+    System.out.println(studentMap);
   }
 }
