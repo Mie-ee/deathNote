@@ -8,6 +8,7 @@ public class Main {
 
   public static void main(String[] args) {
 
+
     //4月の新入生リスト
     List<String> freshmen = List.of(
         "Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Hannah", "Ivan", "John",
